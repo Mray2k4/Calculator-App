@@ -1,4 +1,11 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-auto-rows: 50px;
+}
+
+.itemInput {
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
