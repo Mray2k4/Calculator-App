@@ -5,7 +5,13 @@
     grid-auto-rows: 50px;
 }
 
-.itemInput {
+#itemInput {
     grid-column-start: 1;
     grid-column-end: 5;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
