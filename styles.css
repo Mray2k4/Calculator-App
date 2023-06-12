@@ -1,17 +1,22 @@
 .grid-container {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(4, 100px);
-    grid-auto-rows: 50px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-auto-rows: 50px;
 }
 
-#itemInput {
-    grid-column-start: 1;
-    grid-column-end: 5;
+#input {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+body {
+text-align: center;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+-webkit-appearance: none;
+margin: 0;
 }
+
