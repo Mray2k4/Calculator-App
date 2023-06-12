@@ -47,7 +47,7 @@ function results() {
 
 
 /* Clear */
-Sconst clear = document.getElementById('clear');
+const clear = document.getElementById('clear');
 clear.addEventListener('click', reset);
        
 function reset() {
