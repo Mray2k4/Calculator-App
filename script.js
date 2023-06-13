@@ -2,9 +2,9 @@
 const firstInput = document.querySelectorAll('#item');
 
 firstInput.forEach(function(e) {
-  e.addEventListener('click', func);
+  e.addEventListener('click', func1);
 })
-function func(e) {
+function func1(e) {
   input.value += e.target.textContent;
 }
 
@@ -13,23 +13,11 @@ function func(e) {
 const oper = document.querySelectorAll('#oper');
 
 oper.forEach(function(e) {
-  e.addEventListener('click', func)
+  e.addEventListener('click', oper1)
 })
-function func(e) {
+function oper1(e) {
   input.value += e.target.textContent;
 }
-
-
-/* Second Input */
-const secondInput = document.querySelectorAll('#item');
-
-firstInput.forEach(function(e) {
-  e.addEventListener('click', func);
-})
-function func(e) {
-  input.value += e.target.textContent;
-}
-
 
 /* Results */
 const equal = document.getElementById('equal');
