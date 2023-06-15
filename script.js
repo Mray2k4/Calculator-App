@@ -28,7 +28,7 @@ const Calc = function(c) {
   return new Function('return ' + c)();
 }
 
-input.value = Calc(input.value);
+input.value = parseFloat(Calc(input.value).toFixed(3));
 }
 input.value = '';
 
