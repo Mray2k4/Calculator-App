@@ -17,21 +17,20 @@ oper.forEach(function(e) {
 })
 function oper1(e) {
   input.value += e.target.textContent;
-}
+  }
 
-/* Results */
+
 const equal = document.getElementById('equal');
 equal.addEventListener('click', results)
- 
+
 function results() {
-  switch(oper) {
-    case '*':
-      console.log('firstInput');
-      break
-    default:
-      console.log('no Input')
-  }
+const Calc = function(c) {
+  return new Function('return ' + c)();
 }
+
+input.value = Calc(input.value);
+}
+input.value = '';
 
 
 /* Clear */
