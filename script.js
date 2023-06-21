@@ -1,4 +1,4 @@
-/* Inputs */
+/* First Input*/
 const firstInput = document.querySelectorAll('#item');
 
 let maxCount = 10
@@ -10,7 +10,7 @@ firstInput.forEach(function(e) {
 })
 function func1(e) {
   input.value += e.target.textContent;
-  if (maxCount == 0 && e.button !== 'Backspace' || maxCount == 10 && e.button == 'Backspace') {
+  if (maxCount == 0) {//&& e.button !== 'Backspace' || maxCount == 10 && e.button == 'Backspace') {
   e.preventDefault();
       return;
 }
@@ -56,4 +56,7 @@ clear.addEventListener('click', reset);
        
 function reset() {
   document.getElementById('input').value= '';
+   maxCount = 10;
+  counter.innerHTML = maxCount;
+    return;
 }
