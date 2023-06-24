@@ -1,40 +1,66 @@
+
+let firstInput = document.querySelectorAll('#item');
+let operator = document.querySelectorAll('#oper');
+let input = document.getElementById('input');
+
+
+input.value = '0';
+let num1;
+let oper;
+let array = [];
+
 /* First Input*/
-const firstInput = document.querySelectorAll('#item');
-
-let maxCount = 10
-const counter = document.getElementById('counter');;
-const items = document.getElementById('item');
-
 firstInput.forEach(function(e) {
   e.addEventListener('click', func1);
 })
-function func1(e) {
-  input.value += e.target.textContent;
-  if (maxCount == 0) {//&& e.button !== 'Backspace' || maxCount == 10 && e.button == 'Backspace') {
-  e.preventDefault();
-      return;
-}
-    if(e.button == 'Backspace') {
-      maxCount = maxCount + 1;
-      counter.innerHTML = maxCount;
-    } else {
-      maxCount = maxCount - 1;
-  counter.innerHTML = maxCount;
-    }
-}
+function func1(num) {
+  let numbers = num.target.value;
+  if (input.value === '0')
+   input.value = '';
+  input.value += numbers;
+  
+  }
 
+/* Decimal */
+const decimal = document.getElementById('decimal');
+decimal.addEventListener('click', dec)
+
+function dec() {
+  if (!input.value.includes('.'))
+    input.value += '.';
+}
 
 
 /* Operator Select */
-const oper = document.querySelectorAll('#oper');
-
-oper.forEach(function(e) {
+operator.forEach(function(e) {
   e.addEventListener('click', oper1)
 })
 function oper1(e) {
-  input.value += e.target.textContent;
-  }
-
+  let oper = e.target.value;
+  // input.value += e.target.textContent;
+  if (oper === '+') {
+    num1 = oper;
+    input.value = '0';
+    array.push(num1);
+    array.push('+');
+    } else if (oper === '-') {
+    num1 = oper;
+    input.value = '0';
+    array.push(num1);
+    array.push('-');
+} else if (oper === '*') {
+    num1 = oper;
+    input.value = '0';
+    array.push(num1);
+    array.push('*');
+} else if (oper === '/') {
+    num1 = input.value;
+    input.value = '0'
+    array.push(num1);
+    array.push('/');
+} else {
+}
+}
 
 /* Results */
 const equal = document.getElementById('equal');
@@ -42,21 +68,17 @@ equal.addEventListener('click', results)
 
 function results() {
 const Calc = function(c) {
-  return new Function('return ' + c)();
+  return new Function('return ' + c)(array.join(' '));
 }
 
 input.value = parseFloat(Calc(input.value).toFixed(3)); 
 }
 
 
-
 /* Clear */
 const clear = document.getElementById('clear');
 clear.addEventListener('click', reset);
        
-function reset() {
-  document.getElementById('input').value= '';
-   maxCount = 10;
-  counter.innerHTML = maxCount;
-    return;
-}
+function reset(num) {
+  input.value = '0';
+};
