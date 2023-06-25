@@ -1,13 +1,15 @@
 
 let firstInput = document.querySelectorAll('#item');
 let operator = document.querySelectorAll('#oper');
+//let decimal = document.getElementById('decimal');
 let input = document.getElementById('input');
 
 
 input.value = '0';
 let num1;
+let num2;
 let oper;
-let array = [];
+
 
 /* First Input*/
 firstInput.forEach(function(e) {
@@ -15,11 +17,43 @@ firstInput.forEach(function(e) {
 })
 function func1(num) {
   let numbers = num.target.value;
-  if (input.value === '0')
-   input.value = '';
-  input.value += numbers;
+  if (input.value === '0') 
+    input.value = '';
+    input.value += numbers;
+    input.textContent = input.value;
   
+  if (!num1) {
+    num1 = numbers;
+} else  if (!!num1) {
+    num1 += numbers;
+}
+}
+
+
+/* Operator Select */
+operator.forEach(function(e) {
+  e.addEventListener('click', oper1)
+})
+function oper1(e) {
+ let oper = e.target.value;
+  if (oper === !num1) {
+  if (oper === '+') {
+    num1 = parseInt(num1) + parseInt(num2);
+    } 
+  if (oper === '-') {
+    num1 = num1 - num2;
   }
+  if (oper === '*') {
+    num1 = num1 * num2;
+  } 
+  if (oper === '/') {
+    num1 = num1 / num2;
+    
+}
+//input.value = parseFloat(Calc(input.value).toFixed(3));*/ 
+}
+}
+
 
 /* Decimal */
 const decimal = document.getElementById('decimal');
@@ -30,45 +64,13 @@ function dec() {
     input.value += '.';
 }
 
-
-/* Operator Select */
-operator.forEach(function(e) {
-  e.addEventListener('click', oper1)
-})
-function oper1(e) {
-  let oper = e.target.value;
-  // input.value += e.target.textContent;
-  if (oper === '+') {
-    num1 = oper;
-    input.value = '0';
-    array.push(num1);
-    array.push('+');
-    } else if (oper === '-') {
-    num1 = oper;
-    input.value = '0';
-    array.push(num1);
-    array.push('-');
-} else if (oper === '*') {
-    num1 = oper;
-    input.value = '0';
-    array.push(num1);
-    array.push('*');
-} else if (oper === '/') {
-    num1 = input.value;
-    input.value = '0'
-    array.push(num1);
-    array.push('/');
-} else {
-}
-}
-
 /* Results */
 const equal = document.getElementById('equal');
 equal.addEventListener('click', results)
 
 function results() {
 const Calc = function(c) {
-  return new Function('return ' + c)(array.join(' '));
+  return new Function('return ' + c)();
 }
 
 input.value = parseFloat(Calc(input.value).toFixed(3)); 
@@ -81,4 +83,7 @@ clear.addEventListener('click', reset);
        
 function reset(num) {
   input.value = '0';
+  num1 = '';
+  num2 = '';
+  oper = '';
 };
