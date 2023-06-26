@@ -1,4 +1,3 @@
-
 let firstInput = document.querySelectorAll('#item');
 let operator = document.querySelectorAll('#oper');
 //let decimal = document.getElementById('decimal');
@@ -20,23 +19,30 @@ function func1(num) {
   if (input.value === '0') 
     input.value = '';
     input.value += numbers;
-    input.textContent = input.value;
+    //input.textContent = input.value;
   
   if (!num1) {
     num1 = numbers;
-} else  if (!!num1) {
+} else  if (!!num1 && !oper) {
     num1 += numbers;
+} else if (!num2) {
+    num2 = numbers;
+} else if (!!num1 && !!oper) {
+    num2 += numbers;
+} else {
 }
 }
-
 
 /* Operator Select */
 operator.forEach(function(e) {
   e.addEventListener('click', oper1)
 })
 function oper1(e) {
- let oper = e.target.value;
-  if (oper === !num1) {
+ oper = e.target.value;
+  if (oper === oper) 
+    input.value = '';
+  
+  if (oper && !num1) {
   if (oper === '+') {
     num1 = parseInt(num1) + parseInt(num2);
     } 
@@ -49,11 +55,11 @@ function oper1(e) {
   if (oper === '/') {
     num1 = num1 / num2;
     
-}
+} else {
 //input.value = parseFloat(Calc(input.value).toFixed(3));*/ 
 }
 }
-
+}
 
 /* Decimal */
 const decimal = document.getElementById('decimal');
@@ -65,7 +71,7 @@ function dec() {
 }
 
 /* Results */
-const equal = document.getElementById('equal');
+/*const equal = document.getElementById('equal');
 equal.addEventListener('click', results)
 
 function results() {
@@ -74,7 +80,7 @@ const Calc = function(c) {
 }
 
 input.value = parseFloat(Calc(input.value).toFixed(3)); 
-}
+}*/
 
 
 /* Clear */
