@@ -16,7 +16,7 @@ firstInput.forEach(function(e) {
 })
 function func1(num) {
   let numbers = num.target.value;
-  if (input.value === '0') 
+   if (input.value === '0') 
     input.value = '';
     input.value += numbers;
     //input.textContent = input.value;
@@ -39,26 +39,8 @@ operator.forEach(function(e) {
 })
 function oper1(e) {
  oper = e.target.value;
-  if (oper === oper) 
+ if (oper === oper ) 
     input.value = '';
-  
-  if (oper && !num1) {
-  if (oper === '+') {
-    num1 = parseInt(num1) + parseInt(num2);
-    } 
-  if (oper === '-') {
-    num1 = num1 - num2;
-  }
-  if (oper === '*') {
-    num1 = num1 * num2;
-  } 
-  if (oper === '/') {
-    num1 = num1 / num2;
-    
-} else {
-//input.value = parseFloat(Calc(input.value).toFixed(3));*/ 
-}
-}
 }
 
 /* Decimal */
@@ -71,16 +53,30 @@ function dec() {
 }
 
 /* Results */
-/*const equal = document.getElementById('equal');
+const equal = document.getElementById('equal');
 equal.addEventListener('click', results)
 
 function results() {
-const Calc = function(c) {
-  return new Function('return ' + c)();
+  if (oper === '+') {
+    num1 = parseInt(num1) + parseInt(num2);
+    input.value = num1;
+    } 
+  if (oper === '-') {
+    num1 = num1 - num2;
+    input.value = num1;
+  }
+  if (oper === '*') {
+    num1 = num1 * num2;
+    input.value = num1;
+  } 
+  if (oper === '/') {
+    num1 = num1 / num2;
+    input.value = num1;
+} else {
+//input.value = parseFloat(results(input.value).toFixed(3));
+}
 }
 
-input.value = parseFloat(Calc(input.value).toFixed(3)); 
-}*/
 
 
 /* Clear */
