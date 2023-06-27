@@ -1,6 +1,6 @@
 # Calculator-App
 
-Test it [here]!(https://mray2k4.github.io/Calculator-App/)
+Test it [here](https://mray2k4.github.io/Calculator-App/)
 
 ![Screenshot 2023-06-27 155129](https://github.com/Mray2k4/Calculator-App/assets/99221965/92dac0d7-e024-4e48-ab1c-cecdce3c9868)
 
