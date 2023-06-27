@@ -4,7 +4,7 @@ let operator = document.querySelectorAll('#oper');
 let input = document.getElementById('input');
 
 
-input.value = '0';
+//input.value = '0';
 let num1;
 let num2;
 let oper;
@@ -16,10 +16,10 @@ firstInput.forEach(function(e) {
 })
 function func1(num) {
   let numbers = num.target.value;
-   if (input.value === '0') 
+    if (input.value === '0') 
     input.value = '';
     input.value += numbers;
-    //input.textContent = input.value;
+    input.textContent = input.value;
   
   if (!num1) {
     num1 = numbers;
@@ -39,8 +39,8 @@ operator.forEach(function(e) {
 })
 function oper1(e) {
  oper = e.target.value;
- if (oper === oper ) 
     input.value = '';
+  
 }
 
 /* Decimal */
@@ -60,19 +60,24 @@ function results() {
   if (oper === '+') {
     num1 = parseInt(num1) + parseInt(num2);
     input.value = num1;
+    num2 = '';
     } 
   if (oper === '-') {
     num1 = num1 - num2;
     input.value = num1;
+    num2 = '';
   }
   if (oper === '*') {
     num1 = num1 * num2;
     input.value = num1;
+    num2 = '';
   } 
   if (oper === '/') {
     num1 = num1 / num2;
     input.value = num1;
+    num2 = '';
 } else {
+  
 //input.value = parseFloat(results(input.value).toFixed(3));
 }
 }
