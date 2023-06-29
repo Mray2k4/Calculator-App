@@ -83,8 +83,4 @@ function reset(num) {
   num1 = "";
   num2 = "";
   oper = "";
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ff128b2656fe85a5f539c4281b7ee17f4c640f75
